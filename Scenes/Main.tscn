@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ebotlionslr2"]
+[gd_scene load_steps=6 format=3 uid="uid://ebotlionslr2"]
 
 [ext_resource type="PackedScene" uid="uid://l0q8i8g1j3mu" path="res://Scenes/Paddle.tscn" id="1_prfnt"]
+[ext_resource type="PackedScene" uid="uid://demtm30ykdj80" path="res://Scenes/Ball.tscn" id="2_joy67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uavea"]
 size = Vector2(1152, 15)
@@ -44,5 +45,8 @@ offset_bottom = 648.0
 position = Vector2(1144.5, 324)
 shape = SubResource("RectangleShape2D_kg4xm")
 
-[node name="Node2D" parent="." instance=ExtResource("1_prfnt")]
+[node name="Paddle" parent="." instance=ExtResource("1_prfnt")]
 position = Vector2(528.5, 628)
+
+[node name="Ball" parent="." instance=ExtResource("2_joy67")]
+position = Vector2(568.5, 613)
