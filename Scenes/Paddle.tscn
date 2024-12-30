@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywnkb"]
 size = Vector2(95, 20)
 
-[node name="Node2D" type="StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_m5jks")
 
 [node name="ColorRect" type="ColorRect" parent="."]
