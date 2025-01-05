@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ebotlionslr2"]
+[gd_scene load_steps=8 format=3 uid="uid://ebotlionslr2"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_jyf6c"]
 [ext_resource type="PackedScene" uid="uid://l0q8i8g1j3mu" path="res://Scenes/Paddle.tscn" id="1_prfnt"]
 [ext_resource type="PackedScene" uid="uid://demtm30ykdj80" path="res://Scenes/Ball.tscn" id="2_joy67"]
+[ext_resource type="PackedScene" uid="uid://cgfwiuhi3ap30" path="res://Scenes/Score.tscn" id="6_bmns7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uavea"]
 size = Vector2(1152, 15)
@@ -17,6 +18,7 @@ size = Vector2(15, 648)
 script = ExtResource("1_jyf6c")
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(0, 75)
 
 [node name="ColorRect" type="ColorRect" parent="Ceiling"]
 offset_right = 1152.0
@@ -52,3 +54,6 @@ position = Vector2(528.5, 628)
 
 [node name="Ball" parent="." instance=ExtResource("2_joy67")]
 position = Vector2(568.5, 613)
+
+[node name="Score" parent="." instance=ExtResource("6_bmns7")]
+position = Vector2(30, 10)

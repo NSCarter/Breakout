@@ -32,5 +32,6 @@ func _physics_process(delta):
 		elif "Block" in collider.name:
 			velocity = velocity.bounce(collision.get_normal())
 			get_parent().remove_child(collider)
+			Stats.set_score(Stats._score + 1)
 		else:
 			velocity = velocity.bounce(collision.get_normal())
