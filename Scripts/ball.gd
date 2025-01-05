@@ -30,7 +30,7 @@ func _physics_process(delta):
 			else:
 				velocity = Vector2((pos_on_paddle - 47.5) * 4, velocity.y * -1)
 		elif "Block" in collider.name:
-			velocity = velocity.bounce(collision.get_normal())
+			velocity = Vector2(velocity.x, (velocity.y * -1) + 2.5)
 			get_parent().remove_child(collider)
 			Stats.set_score(Stats._score + 1)
 		else:
