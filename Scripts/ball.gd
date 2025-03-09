@@ -6,6 +6,16 @@ var _stored_velocity: Vector2
 
 func _ready():
 	velocity = Vector2(0, -350)
+	get_parent().resumed.connect(_on_resume)
+
+
+func _process(_delta):
+	var ball_pos = position.y
+	
+	if ball_pos > 648:
+		Stats.update_lives()
+		_stored_velocity = velocity
+		velocity = Vector2(0, 0)
 
 
 func _physics_process(delta):
@@ -32,6 +42,10 @@ func _physics_process(delta):
 		elif "Block" in collider.name:
 			velocity = Vector2(velocity.x, (velocity.y * -1) + 2.5)
 			get_parent().remove_child(collider)
-			Stats.set_score(Stats._score + 1)
+			Stats.update_score()
 		else:
 			velocity = velocity.bounce(collision.get_normal())
+
+
+func _on_resume():
+	velocity = _stored_velocity

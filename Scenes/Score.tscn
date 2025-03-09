@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgfwiuhi3ap30"]
+[gd_scene load_steps=2 format=3 uid="uid://cgfwiuhi3ap30"]
 
-[ext_resource type="Script" path="res://Scripts/score.gd" id="1_0dqhy"]
 [ext_resource type="Texture2D" uid="uid://3816k57cxh5y" path="res://Assets/Images/0.png" id="1_3uw7q"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_0dqhy")
 
 [node name="Hundreds" type="TextureRect" parent="."]
 offset_right = 33.0

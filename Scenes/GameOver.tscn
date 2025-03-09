@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://blu4by2jje5tt"]
+
+[ext_resource type="Script" uid="uid://djpoo7u0q88sb" path="res://Scripts/game_over.gd" id="1_bfgkh"]
+[ext_resource type="Texture2D" uid="uid://cyb2l8y5sjo4d" path="res://Assets/Images/GameOverBackground.png" id="1_rr5wg"]
+[ext_resource type="FontFile" uid="uid://dcklb1shfnbji" path="res://Assets/Font/PixelifySans-VariableFont_wght.ttf" id="2_na4br"]
+[ext_resource type="PackedScene" uid="uid://cgfwiuhi3ap30" path="res://Scenes/Score.tscn" id="3_v6o5w"]
+[ext_resource type="Script" uid="uid://dqxcunhmk1ufp" path="res://Scripts/static_score.gd" id="4_scdmn"]
+[ext_resource type="Texture2D" uid="uid://crnq6ja70gnmq" path="res://Assets/Images/RestartButton.png" id="5_e8rfp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bfgkh")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 248.5
+offset_top = 129.0
+offset_right = 903.5
+offset_bottom = 519.0
+texture = ExtResource("1_rr5wg")
+
+[node name="GameOverLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 41.938
+offset_right = 455.0
+offset_bottom = 101.938
+theme_override_fonts/font = ExtResource("2_na4br")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="ScoreLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 120.875
+offset_right = 229.0
+offset_bottom = 163.875
+theme_override_fonts/font = ExtResource("2_na4br")
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="Score" parent="Background" instance=ExtResource("3_v6o5w")]
+position = Vector2(120, 166.875)
+script = ExtResource("4_scdmn")
+
+[node name="RestartButton" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 217.25
+offset_top = 264.813
+offset_right = 847.25
+offset_bottom = 459.813
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("5_e8rfp")
+
+[connection signal="pressed" from="Background/RestartButton" to="." method="_on_restart_button_pressed"]

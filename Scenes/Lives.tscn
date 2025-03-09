@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bynf3ljswp0ft"]
+
+[ext_resource type="Texture2D" uid="uid://4urqbj7v11h8" path="res://Assets/Images/Heart.png" id="1_cikqh"]
+[ext_resource type="Script" uid="uid://cxtk141toyild" path="res://Scripts/lives.gd" id="1_trad0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_trad0")
+
+[node name="Life 1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cikqh")
+
+[node name="Life 2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 115.0
+offset_bottom = 50.0
+texture = ExtResource("1_cikqh")
+
+[node name="Life 3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_right = 180.0
+offset_bottom = 50.0
+texture = ExtResource("1_cikqh")

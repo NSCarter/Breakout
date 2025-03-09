@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ebotlionslr2"]
+[gd_scene load_steps=10 format=3 uid="uid://ebotlionslr2"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_jyf6c"]
+[ext_resource type="Script" uid="uid://clrkxv05wt5gk" path="res://Scripts/main.gd" id="1_jyf6c"]
 [ext_resource type="PackedScene" uid="uid://l0q8i8g1j3mu" path="res://Scenes/Paddle.tscn" id="1_prfnt"]
 [ext_resource type="PackedScene" uid="uid://demtm30ykdj80" path="res://Scenes/Ball.tscn" id="2_joy67"]
+[ext_resource type="PackedScene" uid="uid://bynf3ljswp0ft" path="res://Scenes/Lives.tscn" id="5_dl1n4"]
+[ext_resource type="Script" uid="uid://d1l5ldms1j5eu" path="res://Scripts/score.gd" id="5_tt1ie"]
 [ext_resource type="PackedScene" uid="uid://cgfwiuhi3ap30" path="res://Scenes/Score.tscn" id="6_bmns7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uavea"]
@@ -57,3 +59,12 @@ position = Vector2(568.5, 613)
 
 [node name="Score" parent="." instance=ExtResource("6_bmns7")]
 position = Vector2(30, 10)
+script = ExtResource("5_tt1ie")
+
+[node name="Lives" parent="." instance=ExtResource("5_dl1n4")]
+offset_left = 942.0
+offset_top = 12.0
+offset_right = 942.0
+offset_bottom = 12.0
+
+[node name="StartTimer" type="Timer" parent="."]
