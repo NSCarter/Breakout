@@ -2,7 +2,13 @@ extends Node2D
 
 
 func _ready() -> void:
-	var score = Stats._score
+	var score_type = get_meta("score_type")
+	var score = 0
+	
+	if score_type == "score":
+		score = Stats._score
+	else:
+		score = Stats.high_score
 	
 	if score >= 100:
 		var hundreds = floor(score / 100)

@@ -41,6 +41,23 @@ horizontal_alignment = 1
 [node name="Score" parent="Background" instance=ExtResource("3_v6o5w")]
 position = Vector2(120, 166.875)
 script = ExtResource("4_scdmn")
+metadata/score_type = "score"
+
+[node name="HighScoreLabel" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 366.5
+offset_top = 120.875
+offset_right = 549.5
+offset_bottom = 163.875
+theme_override_fonts/font = ExtResource("2_na4br")
+theme_override_font_sizes/font_size = 35
+text = "High Score:"
+horizontal_alignment = 1
+
+[node name="HighScore" parent="Background" instance=ExtResource("3_v6o5w")]
+position = Vector2(399, 166.875)
+script = ExtResource("4_scdmn")
+metadata/score_type = "high_score"
 
 [node name="RestartButton" type="TextureButton" parent="Background"]
 layout_mode = 0
