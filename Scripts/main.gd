@@ -17,10 +17,21 @@ func _ready() -> void:
 			add_child(block)
 			
 	$Lives.reset.connect(_reset)
+	$Ball.ceiling_hit.connect(_shorten_paddle)
 			
 func _reset():
-	$Paddle.position = Vector2(528.5, 628)
+	$Paddle.paused = true
+	if $Ball.hit_ceiling:
+		$Paddle.position = Vector2(540.375, 628)
+	else:
+		$Paddle.position = Vector2(528.5, 628)
+		
 	$Ball.position = Vector2(568.5, 613)
 	$StartTimer.start()
 	await $StartTimer.timeout
 	resumed.emit()
+	$Paddle.paused = false
+
+
+func _shorten_paddle():
+	$Paddle.scale = Vector2(0.75, 1)

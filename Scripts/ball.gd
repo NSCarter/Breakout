@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 var _stored_velocity: Vector2
+var hit_ceiling = false
+signal ceiling_hit
 
 
 func _ready():
@@ -43,6 +45,12 @@ func _physics_process(delta):
 			velocity = Vector2(velocity.x, (velocity.y * -1) + 2.5)
 			get_parent().remove_child(collider)
 			Stats.update_score()
+		elif "Ceiling" in collider.name:
+			velocity = velocity.bounce(collision.get_normal())
+			
+			if not hit_ceiling:
+				hit_ceiling = true
+				ceiling_hit.emit()
 		else:
 			velocity = velocity.bounce(collision.get_normal())
 
