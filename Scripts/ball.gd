@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 
-var _stored_velocity: Vector2
-var hit_ceiling = false
 signal ceiling_hit
+
+var hit_ceiling = false
+var _stored_velocity: Vector2
 
 
 func _ready():

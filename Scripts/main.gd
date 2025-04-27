@@ -1,14 +1,26 @@
 extends Node2D
 
 
-var block_scene = preload("res://Scenes/Block.tscn")
-var row_colours= ["df293d", "df293d", "f9ae05", "f9ae05", "3eea52", "3eea52", "ebe83d", "ebe83d"]
 signal resumed
 
+var _block_scene = preload("res://Scenes/Block.tscn")
+
+
 func _ready() -> void:
+	var row_colours= [
+		"df293d", 
+		"df293d", 
+		"f9ae05", 
+		"f9ae05", 
+		"3eea52", 
+		"3eea52", 
+		"ebe83d", 
+		"ebe83d",
+	]
+	
 	for i in range(1, 17):
 		for j in range(1, 9):
-			var block = block_scene.instantiate() as StaticBody2D
+			var block = _block_scene.instantiate() as StaticBody2D
 			block.name = "Block " + str(i) + str(j)
 			block.get_node("ColorRect").color = row_colours[j - 1]
 			var x = 15 + 4.8 * i + (65 * (i - 1))
@@ -18,7 +30,8 @@ func _ready() -> void:
 			
 	$Lives.reset.connect(_reset)
 	$Ball.ceiling_hit.connect(_shorten_paddle)
-			
+
+
 func _reset():
 	$Paddle.paused = true
 	if $Ball.hit_ceiling:

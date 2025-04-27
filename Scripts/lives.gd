@@ -1,7 +1,7 @@
 extends Control
 
 
-var game_over_scene = preload("res://Scenes/GameOver.tscn")
+var _game_over_scene = preload("res://Scenes/GameOver.tscn")
 signal reset
 signal game_over_signal
 
@@ -23,6 +23,6 @@ func _on_life_lost(lifes):
 
 
 func _show_game_over():
-	var game_over = game_over_scene.instantiate() as Node2D
+	var game_over = _game_over_scene.instantiate() as Node2D
 	get_parent().add_child(game_over)
 	game_over_signal.emit()

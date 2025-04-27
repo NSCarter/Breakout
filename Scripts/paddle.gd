@@ -1,7 +1,8 @@
 extends StaticBody2D
 
-var is_game_over = false
+
 var paused = false
+var _is_game_over = false
 
 
 func _ready():
@@ -9,7 +10,7 @@ func _ready():
 
 
 func _process(_delta):
-	if not is_game_over and not paused:
+	if not _is_game_over and not paused:
 		if Input.is_action_pressed("Left"):
 			_move_left()
 		if Input.is_action_pressed("Right"):
@@ -31,4 +32,4 @@ func _move_right():
 
 
 func _game_over():
-	is_game_over = true
+	_is_game_over = true
